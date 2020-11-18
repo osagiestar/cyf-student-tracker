@@ -1,0 +1,64 @@
+
+///////////// COLORS /////////////
+$color-primary: #ED4343;
+
+$color-gray: #f3f3f3; 
+$color-gray-darker: #787878; 
+
+$color-green: #28A745;
+$color-green-darker: #1C612C;
+
+$color-yellow: #E9AF01;
+$color-yellow-darker: #9C7603;
+
+$color-red: #DC3545;
+$color-red-darker: #8E0D19;
+
+$color-blue: #17A2B8;
+$color-blue-darker: #105965;
+
+$color-pink: #DC4785;
+$color-pink-darker: #60203B;
+
+$color-background-popup: rgba(0, 0, 0, 0.75);
+
+$color-white: #fff;
+$color-black: #000;
+
+
+///////////// FONTS /////////////
+
+$font-size-default: 1.6rem;
+$font-size-smaller: 1.4rem;
+$font-size-larger: 1.8rem;
+
+$font-size-header-1: 4.5rem;
+$font-size-header-2: 3.5rem;
+$font-size-header-3: 2.5rem;
+
+
+///////////// MIXINS /////////////
+
+@mixin input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 150px;
+    background-color: blue;
+}
+
+@mixin centerVH{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin centerColumnVH{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin boxShadow{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}

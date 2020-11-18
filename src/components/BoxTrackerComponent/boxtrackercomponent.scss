@@ -1,0 +1,24 @@
+@import '../../assets/sass/main.scss';
+
+.BoxTrackerComponent{
+    width: 20rem;
+    height: 20rem;
+    margin: 2rem 5rem 2rem 0;
+    @include boxShadow;
+    @include centerColumnVH;
+    background-color: $color-gray;
+    text-decoration: none;
+    
+    &__image{
+        width: 6rem;
+        height: 6rem;
+        fill: $color-gray-darker;
+        color: $color-gray-darker;
+        margin: 1rem;
+    }
+
+    &__title{
+        color:$color-primary;
+        font-size: $font-size-larger;
+    }
+}

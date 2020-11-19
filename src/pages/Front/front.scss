@@ -1,4 +1,39 @@
-@import '../../assets/sass/main.scss';
+@import "../../assets/sass/main.scss";
+
+.front-page {
+  background-color: white;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 68rem;
+    position: relative;
+    overflow: hidden;
+  }
+  &-button {
+    background-color: $color-primary;
+    color: $color-white;
+    width: 15rem;
+    height: 5rem;
+    margin: 0;
+    border: 1px solid $color-primary;
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  &-title {
+    font-size: $font-size-header-1;
+    color: $color-white;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 
 
 

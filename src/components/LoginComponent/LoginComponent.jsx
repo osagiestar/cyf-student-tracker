@@ -25,10 +25,9 @@ export default function LoginComponent() {
     fetch("https://stingy-cherry-sight.glitch.me/login", requestOptions)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         if (res.success === true) {
           localStorage.setItem("token", res.token); //storing the token in localStorage.
-          history.push("/student-tracker");
+          history.push("/choose-class");
         } else {
           const error = new Error(res.error);
           throw error;
@@ -75,11 +74,6 @@ export default function LoginComponent() {
           </li>
         </ul>
       </form>
-      <footer className="page-footer">
-        <div className="footer-copyright-text">
-          Copyright 2020 CodeYourFuture
-        </div>
-      </footer>
     </div>
   );
 }

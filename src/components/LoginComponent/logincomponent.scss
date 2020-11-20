@@ -21,7 +21,6 @@
   }
 
   & h1 {
-    float: center;
     font-size: $font-size-x-larger;
     margin-bottom: 50px;
     padding: 13px 0;
@@ -53,18 +52,3 @@ a {
   text-decoration: none;
 }
 
-.page-footer {
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  text-align: center;
-  background-color: $color-gray-darker;
-  position: absolute;
-  top: 93%;
-}
-.footer-copyright-text {
-  padding-top: 15px;
-  color: $color-white;
-  display: flex;
-  margin: 0 auto;
-}

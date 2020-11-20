@@ -1,0 +1,59 @@
+@import '../../assets/sass/main.scss';
+
+.table-box{
+    height: 60rem;
+    margin: 5rem auto;
+    overflow: scroll;
+    
+}
+
+.table{
+    border: 3px solid $color-gray-darker;
+    border-collapse: collapse;
+
+    tr,td,th{
+        border: 1px solid $color-gray-darker;
+        padding: 2rem;
+    }
+
+    &__head{
+        border-bottom: 2px solid $color-gray-darker;
+    }
+    &__head tr:nth-child(1) th {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 100;
+        color: $color-primary;
+    }
+    &__head tr:nth-child(2) th {
+        position: sticky;
+        top: 8rem;
+        background-color: white;
+    
+    }
+
+    &__studentName{ 
+        text-align: left;
+        font-weight: 500;
+        // color: $color-primary;
+        position: sticky;
+        left: 0;
+        background-color: white;
+    }
+}
+
+.green{
+    background-color: #B7E1CD;
+}
+
+.red{
+    background-color: #F4C7C3;
+}
+.yellow {
+    background-color: #FCE8B2;
+}
+.white{
+    background-color: white;
+}
+

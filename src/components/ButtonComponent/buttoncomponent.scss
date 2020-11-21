@@ -1,0 +1,12 @@
+@import '../../assets/sass/main.scss';
+
+.btn {
+    outline: none;
+    border: none;
+    background: $color-primary;
+    color: $color-white;
+    padding: 1rem 4rem;
+    font-size: $font-size-default;
+    font-family: inherit;
+    cursor: pointer;
+}

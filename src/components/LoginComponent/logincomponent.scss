@@ -1,0 +1,31 @@
+@import "../../assets/sass/main.scss";
+
+.login-box {
+  width: 30rem;
+  color: $color-black;
+
+
+ h1 {
+    font-size: $font-size-x-larger;
+    margin-bottom: 5rem;
+  }
+}
+
+.login-form {
+  @include centerColumnVH;
+  input {
+    border: none;
+    outline: none;
+    color: $color-gray-darker;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-bottom: 1px solid black;
+}
+}
+li,
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+

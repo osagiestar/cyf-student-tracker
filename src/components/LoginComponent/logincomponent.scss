@@ -1,50 +1,27 @@
 @import "../../assets/sass/main.scss";
 
 .login-box {
-  width: 280px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 30rem;
   color: $color-black;
 
-  &-btn {
-    width: 100%;
-    height: 3.5rem;
-    background: $color-primary;
-    border: 1px $color-primary;
-    color: $color-white;
-    padding: 2px;
-    font-size: $font-size-smaller;
-    cursor: pointer;
-    margin: 15px 5px 0 3px;
-  }
 
-  & h1 {
+ h1 {
     font-size: $font-size-x-larger;
-    margin-bottom: 50px;
-    padding: 13px 0;
+    margin-bottom: 5rem;
   }
 }
 
-.text-box {
-  width: 97.5%;
-  overflow: hidden;
-  font-size: 20px;
-  padding: 8px 0;
-  margin: 8px 0;
-  border-bottom: 1px solid $color-black;
-
-  & input {
+.login-form {
+  @include centerColumnVH;
+  input {
     border: none;
     outline: none;
-    background: none;
     color: $color-gray-darker;
-    font-size: 18px;
     width: 100%;
-    float: left;
-    margin: 0 10px;
-  }
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-bottom: 1px solid black;
+}
 }
 li,
 a {

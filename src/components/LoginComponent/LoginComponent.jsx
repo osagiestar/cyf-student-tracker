@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import "./logincomponent.scss";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import Button  from "../../components/ButtonComponent/buttoncomponent";
 
 export default function LoginComponent() {
   const [userName, setUserName] = useState("");
@@ -42,21 +43,19 @@ export default function LoginComponent() {
   };
 
   return (
-    <div className="login-page">
-      <form className="login-box" onSubmit={handleSubmit}>
+    <div className="login-box">
+      <form className="login-form" onSubmit={handleSubmit}>
         <div>
           <h1>Log In</h1>
         </div>
-        <div className="text-box">
+      
           <input
-            name="userName"
+            name="Username"
             type="text"
             value={userName}
             placeholder="username"
             onChange={(e) => setUserName(e.target.value)}
           />
-        </div>
-        <div className="text-box">
           <input
             name="password"
             type="password"
@@ -64,13 +63,13 @@ export default function LoginComponent() {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-        <div className="buttons">
-          <input type="submit" className="login-box-btn" value="Log In" />
-        </div>
+        <Link onClick={handleSubmit}>
+        <Button title= {"Login"} />
+        </Link>
+    
         <ul>
           <li>
-            <a href="#">Forgot your password ?</a>
+            <a href="/reset">Forgot your password ?</a>
           </li>
         </ul>
       </form>

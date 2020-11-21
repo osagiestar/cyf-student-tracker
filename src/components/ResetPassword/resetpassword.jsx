@@ -12,15 +12,8 @@ export default function ResetPassword() {
     setEmail(e.target.value);
   };
   const [email, setEmail] = useState("");
-  // eslint-disable-next-line
-  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9] {1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const PostData = () => {
-    console.log("hi");
-    if (re) {
-      alert("invalid email");
-      return;
-    }
-    fetch("/", {
+    fetch("", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -31,10 +24,10 @@ export default function ResetPassword() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.error) {
+        if (data.success===false) {
           M.toast({ html: "invalid email" });
         } else {
-          M.toast({ html: data.message });
+          M.toast({ html: data.email});
           history.push("/login");
         }
       })

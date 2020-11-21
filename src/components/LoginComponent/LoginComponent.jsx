@@ -66,10 +66,9 @@ export default function LoginComponent() {
         <Link onClick={handleSubmit}>
         <Button title= {"Login"} />
         </Link>
-    
         <ul>
           <li>
-            <a href="/reset">Forgot your password ?</a>
+          <a href="/reset">Forgot your password ?</a>  
           </li>
         </ul>
       </form>

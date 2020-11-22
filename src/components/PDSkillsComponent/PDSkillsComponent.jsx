@@ -1,8 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './headingpagecomponent.scss';
 
 export default function PDSkillsComponent (){
 
+    const[option, setOption]= useState('');
+
+    function handleChange(e){
+        setOption({value: e.target.value});
+    };
+
+    
     return (
         <div className = 'main-cover'>
             <h1 className= 'component-name'>
@@ -10,7 +17,7 @@ export default function PDSkillsComponent (){
             </h1>
         <div className='PDSkills-cover'> 
             <label for="PDSkills">Skill</label>
-            <select id="PDSkills">
+            <select id="PDSkills" value = {option} onChange ={handleChange}>
                 <option value="PDSkills-1">Communication</option>
                 <option value="PDSkills-2">Motivation</option>
                 <option value="PDSkills-3">Team Work</option>

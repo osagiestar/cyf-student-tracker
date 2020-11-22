@@ -48,7 +48,6 @@ export default function LoginComponent() {
         <div>
           <h1>Log In</h1>
         </div>
-      
           <input
             name="Username"
             type="text"
@@ -63,16 +62,14 @@ export default function LoginComponent() {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-        <Link onClick={handleSubmit}>
+        <div onClick={handleSubmit}>
         <Button title= {"Login"} />
-        </Link>
-    
-        <ul>
-          <li>
-            <a href="/reset">Forgot your password ?</a>
-          </li>
-        </ul>
+        </div>    
       </form>
+      <div>
+      <Link to="/reset">Forgot your password ?</Link>
+      </div>
+      
     </div>
   );
 }

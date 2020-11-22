@@ -5,6 +5,7 @@ import Front from '../pages/Front/Front';
 import ResetPassword from '.././components/ResetPassword/resetpassword'
 import Login from '../pages/Login/Login';
 import StudentTracker from '../pages/StudentTracker/StudentTracker';
+import ClassAttendance from '../pages/ClassAttendance/ClassAttendance';
 
 export default () => {
   return (
@@ -15,6 +16,7 @@ export default () => {
         <Route path="/reset" component={ResetPassword} />
         <Route exact path="/student-tracker" component={StudentTracker} />
         <Route path="/student-tracker/Edu-Homework" component={EduHomework} />
+        <Route path="/student-tracker/Class-Attendance" component={ClassAttendance} />
       </BrowserRouter>
     </div>
   );

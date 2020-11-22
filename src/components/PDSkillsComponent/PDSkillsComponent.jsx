@@ -9,7 +9,7 @@ export default function PDSkillsComponent (){
         setOption({value: e.target.value});
     };
 
-    
+
     return (
         <div className = 'main-cover'>
             <h1 className= 'component-name'>
@@ -35,10 +35,10 @@ export default function PDSkillsComponent (){
         <div className= 'SkillLevel-cover'>
             <label>Skill Level</label>
             <button className='excellent-button'>Excellent</button>
-            <button className='excellent-button'>Very Good</button>
-            <button className='excellent-button'>Average</button>
-            <button className='excellent-button'>Below Average</button>
-            <button className='excellent-button'>Poor</button>
+            <button className='very-good-button'>Very Good</button>
+            <button className='average-button'>Average</button>
+            <button className='below-average-button'>Below Average</button>
+            <button className='poor-button'>Poor</button>
         </div>
 
         </div>

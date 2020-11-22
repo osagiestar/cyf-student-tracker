@@ -1,5 +1,5 @@
 import React from 'react';
-import './classattendancetable.scss';
+import '../EduHomeworkTable/eduhomeworktable.scss';
 import data from './fakeData';
 
 export default function ClassAttendanceTable() {
@@ -7,6 +7,7 @@ export default function ClassAttendanceTable() {
     let modules = Object.keys(data[0].classAttendance);
 
     return (
+        // we are using the same classes as for Edu Homework Table
         <div className='table-box'>
                 <table className='table'>
                     <thead className='table__head'>
@@ -46,7 +47,13 @@ export default function ClassAttendanceTable() {
                                 {
                                     modules.map(module => {
                                         return Object.entries(student.classAttendance[module]).map(([key, value], index) =>
-                                            <td key={index} className={value !== null ? (value == 'yes' ? 'green' : value == 'no' ? 'red' : 'yellow') : 'white'}>{value}</td>
+                                            <td 
+                                            key={index} 
+                                            //choose different color background depending on the rating
+                                            className={value !== null ? (value == 'yes' ? 'green' : value == 'no' ? 'red' : 'yellow') : 'white'}
+                                        >
+                                        {value}
+                                        </td>
                                         )
                                     })
                                     

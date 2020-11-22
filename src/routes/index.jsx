@@ -6,6 +6,8 @@ import ResetPassword from '.././components/ResetPassword/resetpassword'
 import Login from '../pages/Login/Login';
 import StudentTracker from '../pages/StudentTracker/StudentTracker';
 import ClassAttendance from '../pages/ClassAttendance/ClassAttendance';
+import PDSkills from '../pages/PDSkills/PDSkills';
+import Soon from '../pages/Soon/Soon';
 
 export default () => {
   return (
@@ -17,7 +19,10 @@ export default () => {
         <Route exact path="/student-tracker" component={StudentTracker} />
         <Route path="/student-tracker/Edu-Homework" component={EduHomework} />
         <Route path="/student-tracker/Class-Attendance" component={ClassAttendance} />
+        <Route path="/student-tracker/PD-Skills" component={PDSkills} />
+        <Route path="/student-tracker/Student-Info" component={Soon} />
+        <Route path="/student-tracker/Laptop" component={Soon} />
       </BrowserRouter>
     </div>
   );
-};
+};  

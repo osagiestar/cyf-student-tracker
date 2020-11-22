@@ -1,0 +1,13 @@
+@import '../../assets/sass/main.scss';
+.soon-page{
+    @include centerColumnVH;
+    height: 80vh;
+
+
+    &__heading{
+        font-size: 8rem;
+        color: $color-primary;
+    }
+
+    
+}

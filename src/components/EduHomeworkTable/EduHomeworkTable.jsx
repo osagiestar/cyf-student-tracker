@@ -46,7 +46,13 @@ export default function EduHomeworkTable() {
                                 {
                                     modules.map(module => {
                                         return Object.entries(student.eduHomework[module]).map(([key, value], index) =>
-                                            <td key={index} className={value !== null ? (value <= 3 ? 'red' : value >= 8 ? 'green' : 'yellow') : 'white'}>{value}</td>
+                                            <td 
+                                            key={index} 
+                                            //choose different color background depending on the student rating
+                                            className={value !== null ? (value <= 3 ? 'red' : value >= 8 ? 'green' : 'yellow') : 'white'}
+                                        >
+                                        {value}
+                                        </td>
                                         )
                                     })
                                     

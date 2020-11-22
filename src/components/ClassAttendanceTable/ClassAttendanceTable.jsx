@@ -1,12 +1,13 @@
 import React from 'react';
-import './eduhomeworktable.scss'
-import data from './fakeData'
+import '../EduHomeworkTable/eduhomeworktable.scss';
+import data from './fakeData';
 
-export default function EduHomeworkTable() {
+export default function ClassAttendanceTable() {
 
-    let modules = Object.keys(data[0].eduHomework);
+    let modules = Object.keys(data[0].classAttendance);
 
     return (
+        // we are using the same classes as for Edu Homework Table
         <div className='table-box'>
                 <table className='table'>
                     <thead className='table__head'>
@@ -16,7 +17,7 @@ export default function EduHomeworkTable() {
 
                             {/* creating each module title in the header of the table and also dynamically adding col span  */}
                             {
-                                modules.map((module,index)=> <th key={index} className='table__heading' colSpan={Object.keys(data[0].eduHomework[module]).length}>{module}</th>)
+                                modules.map((module,index)=> <th key={index} className='table__heading' colSpan={Object.keys(data[0].classAttendance[module]).length}>{module}</th>)
                             }
                             
                         </tr>
@@ -26,7 +27,7 @@ export default function EduHomeworkTable() {
                             {/* displaying weeks in a module */}
                             {
                             modules.map(module => {
-                                        return Object.entries(data[0].eduHomework[module]).map(([key, value], index) =>
+                                        return Object.entries(data[0].classAttendance[module]).map(([key, value], index) =>
                                             <th key={index} className='table__heading' >{key}</th>
                                         )
                                     })
@@ -45,11 +46,11 @@ export default function EduHomeworkTable() {
                                 <td key={index} className='table__studentName'>{student.name}</td>  
                                 {
                                     modules.map(module => {
-                                        return Object.entries(student.eduHomework[module]).map(([key, value], index) =>
+                                        return Object.entries(student.classAttendance[module]).map(([key, value], index) =>
                                             <td 
                                             key={index} 
-                                            //choose different color background depending on the student rating
-                                            className={value !== null ? (value <= 3 ? 'red' : value >= 8 ? 'green' : 'yellow') : 'white'}
+                                            //choose different color background depending on the rating
+                                            className={value !== null ? (value == 'yes' ? 'green' : value == 'no' ? 'red' : 'yellow') : 'white'}
                                         >
                                         {value}
                                         </td>

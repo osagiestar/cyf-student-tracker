@@ -47,8 +47,16 @@
     background-color: #B7E1CD;
 }
 
+.green-darker{
+    background-color: $color-green;
+}
+
 .red{
     background-color: #F4C7C3;
+}
+
+.red-darker{
+    background-color: $color-red;
 }
 .yellow {
     background-color: #FCE8B2;

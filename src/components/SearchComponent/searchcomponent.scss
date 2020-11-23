@@ -1,0 +1,12 @@
+@import '../../assets/sass/main.scss';
+
+.search-box{
+    width: 35rem;
+
+    &__input{
+        width: 100%;
+        @include inputStyles;
+        font-family: inherit;
+        font-size: $font-size-default;
+    }
+}

@@ -35,7 +35,7 @@ export default function MiniOverview() {
         
             <div className="mini-overview">
             {
-                overviews.map(([key, value]) => {
+                overviews.map(([key, value], index) => {
                     let sum = 0;
 
                     value.forEach(val => {
@@ -55,7 +55,7 @@ export default function MiniOverview() {
 
                     let finalResult = Math.round(sum / value.length *10);
                     return (
-                        <div className='mini-overview__card'>
+                        <div key={index} className='mini-overview__card'>
                             <div className="mini-overview__card-percent">
                                 <svg>
                                     <circle cx='20' cy='20' r='20'></circle>

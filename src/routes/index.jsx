@@ -8,6 +8,7 @@ import StudentTracker from '../pages/StudentTracker/StudentTracker';
 import ClassAttendance from '../pages/ClassAttendance/ClassAttendance';
 import PDSkills from '../pages/PDSkills/PDSkills';
 import Soon from '../pages/Soon/Soon';
+import Students from '../pages/Students/Students';
 
 export default () => {
   return (
@@ -17,6 +18,7 @@ export default () => {
         <Route path="/login" component={Login} />
         <Route path="/reset" component={ResetPassword} />
         <Route exact path="/student-tracker" component={StudentTracker} />
+        <Route exact path="/students" component={Students} />
         <Route path="/student-tracker/Edu-Homework" component={EduHomework} />
         <Route path="/student-tracker/Class-Attendance" component={ClassAttendance} />
         <Route path="/student-tracker/PD-Skills" component={PDSkills} />

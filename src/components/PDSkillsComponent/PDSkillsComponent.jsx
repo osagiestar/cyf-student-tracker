@@ -1,65 +1,83 @@
 import React,{useState} from 'react';
 import './headingpagecomponent.scss';
-import data from './fakeData';
 
 export default function PDSkillsComponent (){
 
-    const[option, setOption]= useState('0');
+    let studentProfile ={
+    studentInfo: {
+        name: 'fdsfds',
+        email: '...'
+        },
+    overview: {
+        'Homeworks Performance': [6,6,6,6,6,6,6,6,10,10],
+        'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
+        'Classes Attended': ['no','no','yes', 'late','no'],
+        'Classes Late': ['yes', 'no', 'late', 'no']
+        },
+    PDSkills: {
+        'Communication': null,
+        'Motivation': null,
+        'Collaboration & Team Work': null,
+        'Resilience': null,
+        'Growth Mindset': null,
+        'Organisation': null,
+        'Attention to detail': null,
+        'Punctuality': null,
+        'Focus ': null,
+        'Language Proficiency': null,
+        'Self-confidence': null,
+        'Pro-active Learning': null
+    }
+}
+
+    let valueArr = [];
+    let skillsObject = studentProfile.PDSkills;
+    let skillsArr = Object.keys(skillsObject);
+    console.log(skillsArr);
+
+    const[option, setOption]= useState(0);
 
     function handleChange(e){
-        setOption({value: e.target.value});
+        setOption(e.target.value);
     };
 
-    let pdSkillsArr = [
-        {value:1, skill:'Communication'},
-        {value:2, skill:'Motivation'},
-        {value:3, skill:'Team Work'},
-        {value:4, skill:'Resilience'},
-        {value:5, skill:'Growth Mindset'},
-        {value:6, skill:'Organization'},
-        {value:7, skill:'Attention to Details'},
-        {value:8, skill:'Punctuality'},
-        {value:9, skill:'Language Proficiency'},
-        {value:10, skill:'Self-Confidence'},
-        {value:11, skill:'Pro-Active Learning'},
-        {value:12, skill:'Focus'},
-    ]
-
-    let skillLevelArr = [
-        {id = 1, skillLevel: 'Excellent'},
-        {id = 2, skillLevel: 'Very Good'},
-        {id = 3, skillLevel: 'Average'},
-        {id = 4, skillLevel: 'Below Average'},
-        {id = 5, skillLevel: 'Poor'}
-    ];
-
-    const[skill, setSkill] = useState('');
 
     function handleClick (e){
-        setSkill()
+        valueArr[option] = e.target.innerText;
+        console.log(valueArr);
     }
 
+    function setResult (){
+        skillsArr.map((s,ind) => studentProfile.PDSkills[s]=valueArr[ind]);
+        console.log(studentProfile.PDSkills);
+    }
     return (
-        <div className = 'main-cover'>
-            <h1 className= 'component-name'>
-            PD Skills
-            </h1>
+    <div className = 'main-cover'>
+        <h1 className= 'component-name'>PD Skills</h1>
         <div className='PDSkills-cover'> 
+
             <label for="PDSkills">Skill</label>
-            <select id="PDSkills" value = {option} onChange ={handleChange}>
-                {pdSkillsArr.map(s=>{
-                    <option value={s.value} >{s.skill}</option>
-                })};
+
+            <select id="PDSkills" value={option} onChange ={handleChange}>
+                {skillsArr.map((s,ind) => {valueArr.push(skillsObject[s]);
+                    return <option value={ind} >{s}</option>}
+                )};
             </select>
         </div>
+
         <div className= 'SkillLevel-cover'>
+
             <label>Skill Level</label>
-                {skillLevelArr.map(k=>{
-                    <button className='excellent-button' onCLick = {handleClick}>{k.skillLevel}</button>
-                })};
+
+            <button className='excellent-button' onClick={handleClick} >Excellent</button>
+            <button className='very-good-button' onClick={handleClick} >Very Good</button>	            
+            <button className='excellent-button' onClick={handleClick} >Average</button>	            
+            <button className='excellent-button' onClick={handleClick} >Below Average</button>	            
+            <button className='excellent-button' onClick={handleClick} >Poor</button>
+            
+            <button className='excellent-button' onClick={setResult} >SUBMIT</button>
         </div>
 
-        </div>
-
+    </div>
     );
 };

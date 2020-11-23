@@ -1,0 +1,70 @@
+@import '../../assets/sass/main.scss';
+
+.mini-overview{
+
+    position: relative;
+    @include centerVH;
+    background-color: $color-gray;
+    margin-left: 5rem ;
+
+    &__card{
+        margin: 0 2rem;
+
+        &-percent{
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+    
+            svg{
+                width: 10rem;
+                height: 5rem;
+    
+                circle{
+                    // width: 5rem;
+                    // // height: 5rem;
+                    transform: translate(5px,5px);
+                    fill: none;
+                    stroke-width: 3;
+                    stroke-dasharray: 120;
+                    stroke-dashoffset: 120;
+                    stroke-linecap: square;
+    
+                    &:nth-child(1){
+                        stroke-dashoffset: 0;
+                        stroke: #b6b6b6;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+    .number{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include centerVH;
+        color: $color-gray-darker;
+
+
+        h2{
+            margin: 0;
+            font-size:1.4rem ;
+            span{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .text{
+        width: 5rem;
+        color: $color-gray-darker;
+        font-weight: 700;
+        font-size: 1.2rem;
+        
+    }
+}
+

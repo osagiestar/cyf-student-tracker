@@ -50,7 +50,7 @@ export default function ClassAttendanceTable() {
                                             <td 
                                             key={index} 
                                             //choose different color background depending on the rating
-                                            className={value !== null ? (value == 'yes' ? 'green' : value == 'no' ? 'red' : 'yellow') : 'white'}
+                                            className={value !== null ? (value === 'yes' ? 'green' : value === 'no' ? 'red' : 'yellow') : 'white'}
                                         >
                                         {value}
                                         </td>

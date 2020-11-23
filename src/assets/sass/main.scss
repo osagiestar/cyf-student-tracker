@@ -46,12 +46,11 @@ $font-size-header-3: 2.5rem;
 
 ///////////// MIXINS /////////////
 
-@mixin input {
-    padding: 10px;
-    border: none;
+@mixin inputStyles {
+    padding: 1rem 2rem;
+    border: 1px solid $color-gray-darker;
     outline: none;
-    width: 150px;
-    background-color: blue;
+    background-color: $color-gray;
 }
 
 @mixin centerVH{

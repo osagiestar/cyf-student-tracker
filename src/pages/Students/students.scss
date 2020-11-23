@@ -1,0 +1,16 @@
+@import '../../assets/sass/main.scss';
+.studentsPage{
+    display: flex;
+
+    &__rightSide{
+        width: 70%;
+        padding: 5rem;
+
+
+        &-inputs{
+            display: flex;
+            justify-content: space-between;
+            margin: 5rem 0;
+        }
+    }
+}

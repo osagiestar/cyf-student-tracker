@@ -1,14 +1,43 @@
 import React,{useState} from 'react';
 import './headingpagecomponent.scss';
+import data from './fakeData';
 
 export default function PDSkillsComponent (){
 
-    const[option, setOption]= useState('');
+    const[option, setOption]= useState('0');
 
     function handleChange(e){
         setOption({value: e.target.value});
     };
 
+    let pdSkillsArr = [
+        {value:1, skill:'Communication'},
+        {value:2, skill:'Motivation'},
+        {value:3, skill:'Team Work'},
+        {value:4, skill:'Resilience'},
+        {value:5, skill:'Growth Mindset'},
+        {value:6, skill:'Organization'},
+        {value:7, skill:'Attention to Details'},
+        {value:8, skill:'Punctuality'},
+        {value:9, skill:'Language Proficiency'},
+        {value:10, skill:'Self-Confidence'},
+        {value:11, skill:'Pro-Active Learning'},
+        {value:12, skill:'Focus'},
+    ]
+
+    let skillLevelArr = [
+        {id = 1, skillLevel: 'Excellent'},
+        {id = 2, skillLevel: 'Very Good'},
+        {id = 3, skillLevel: 'Average'},
+        {id = 4, skillLevel: 'Below Average'},
+        {id = 5, skillLevel: 'Poor'}
+    ];
+
+    const[skill, setSkill] = useState('');
+
+    function handleClick (e){
+        setSkill()
+    }
 
     return (
         <div className = 'main-cover'>
@@ -18,27 +47,16 @@ export default function PDSkillsComponent (){
         <div className='PDSkills-cover'> 
             <label for="PDSkills">Skill</label>
             <select id="PDSkills" value = {option} onChange ={handleChange}>
-                <option value="PDSkills-1">Communication</option>
-                <option value="PDSkills-2">Motivation</option>
-                <option value="PDSkills-3">Team Work</option>
-                <option value="PDSkills-4">Resilience</option>
-                <option value="PDSkills-5">Growth Mindset</option>
-                <option value="PDSkills-6">Organization</option>
-                <option value="PDSkills-6">Attention to Details</option>
-                <option value="PDSkills-8">Punctuality</option>
-                <option value="PDSkills-9">Language Proficiency</option>
-                <option value="PDSkills-10">Self-Confidence</option>
-                <option value="PDSkills-11">Pro-Active Learning</option>
-                <option value="PDSkills-12">Focus</option>
+                {pdSkillsArr.map(s=>{
+                    <option value={s.value} >{s.skill}</option>
+                })};
             </select>
         </div>
         <div className= 'SkillLevel-cover'>
             <label>Skill Level</label>
-            <button className='excellent-button'>Excellent</button>
-            <button className='very-good-button'>Very Good</button>
-            <button className='average-button'>Average</button>
-            <button className='below-average-button'>Below Average</button>
-            <button className='poor-button'>Poor</button>
+                {skillLevelArr.map(k=>{
+                    <button className='excellent-button' onCLick = {handleClick}>{k.skillLevel}</button>
+                })};
         </div>
 
         </div>

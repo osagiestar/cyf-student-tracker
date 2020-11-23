@@ -13,22 +13,23 @@ function returnColourBasedOnVal(val){
     }
 }
 
-export default function MiniOverview() {
+export default function MiniOverview({data}) {
 
 
-    let student = {
+    // let student = {
         
-       overview: {
-        'Homeworks Performance': [10,10,10,10,10,10,10,10,10,10],
-        'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
-        'Classes Attended': ['no','no','yes', 'late','no'],
-        'Classes Late': ['yes', 'no', 'late', 'no']
-        }
+    //    overview: {
+    //     'Homeworks Performance': [10,10,10,10,10,10,10,10,10,10],
+    //     'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
+    //     'Classes Attended': ['no','no','yes', 'late','no'],
+    //     'Classes Late': ['yes', 'no', 'late', 'no']
+    //     }
      
-    };
+    // };
 
 
-    let overviews = Object.entries(student.overview);
+    let overviews = Object.entries(data);
+    
     
 
     return (
@@ -59,7 +60,7 @@ export default function MiniOverview() {
                             <div className="mini-overview__card-percent">
                                 <svg>
                                     <circle cx='20' cy='20' r='20'></circle>
-                                    <circle style={{'strokeDashoffset': `${120 - (120 * finalResult) / 100}`, stroke: returnColourBasedOnVal(finalResult) }} cx='20' cy='20' r='20'></circle>
+                                    <circle style={{'strokeDashoffset': `${130 - (130 * finalResult) / 100}`, stroke: returnColourBasedOnVal(finalResult) }} cx='20' cy='20' r='20'></circle>
                                 </svg>
 
                                 <div className="number">    

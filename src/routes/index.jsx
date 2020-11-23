@@ -18,6 +18,7 @@ export default () => {
         <Route path="/login" component={Login} />
         <Route path="/reset" component={ResetPassword} />
         <Route exact path="/student-tracker" component={StudentTracker} />
+        <Route exact path="/students" component={Students} />
         <Route path="/student-tracker/Edu-Homework" component={EduHomework} />
         <Route path="/student-tracker/Class-Attendance" component={ClassAttendance} />
         <Route path="/student-tracker/PD-Skills" component={PDSkills} />

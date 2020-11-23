@@ -48,7 +48,7 @@ $font-size-header-3: 2.5rem;
 
 @mixin inputStyles {
     padding: 1rem 2rem;
-    border: 1px solid $color-gray;
+    border: 1px solid $color-gray-darker;
     outline: none;
     background-color: $color-gray;
 }

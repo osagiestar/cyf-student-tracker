@@ -9,7 +9,7 @@ import ClassAttendance from '../pages/ClassAttendance/ClassAttendance';
 import PDSkills from '../pages/PDSkills/PDSkills';
 import Soon from '../pages/Soon/Soon';
 import Students from '../pages/Students/Students';
-
+import ChooseClass from '../pages/ChooseClass/ChooseClass';
 export default () => {
   return (
     <div>
@@ -17,6 +17,7 @@ export default () => {
         <Route exact path="/" component={Front} />
         <Route path="/login" component={Login} />
         <Route path="/reset" component={ResetPassword} />
+        <Route path="/choose-class" component={ChooseClass} />
         <Route exact path="/student-tracker" component={StudentTracker} />
         <Route exact path="/students" component={Students} />
         <Route path="/student-tracker/Edu-Homework" component={EduHomework} />

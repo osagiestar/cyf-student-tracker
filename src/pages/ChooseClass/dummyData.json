@@ -1,0 +1,22 @@
+[
+  {
+    "userName": "Claire Bickley",
+    "region": "West-midlands",
+    "classes": ["West-midlands-class-1", "West-midlands-class-2", "West-midlands-class-3"]
+  },
+  {
+    "userName": "Chris Owen",
+    "region": "London",
+    "classes": ["London-class-1", "London-class-2", "London-class-3", "London-class-4"]
+  },
+  {
+    "userName": "Wahab Rahman",
+    "region": "Manchester",
+    "classes": ["Manchester-class-1", "Manchester-class-2", "Manchester-class-3"]
+  },
+  {
+    "userName": "Emil Pafarad",
+    "region": "Glasgow",
+    "classes": ["Glasgow-class-1", "Glasgow-class-2", "Glasgow-class-3", "Glasgow-class-4"]
+  }
+]

@@ -9,4 +9,58 @@
     font-size: $font-size-default;
     font-family: inherit;
     cursor: pointer;
+
+
+    &__green{
+        margin: 1rem;
+        background-color: $color-green;
+        border: 2px solid $color-green-darker;
+    }
+    &__green:focus{
+        background-color: $color-green-darker;
+        border: 2px solid $color-green;
+    }
+    &__blue{
+        margin: 1rem;
+        background-color: $color-blue;
+        border: 2px solid $color-blue-darker;
+    }
+    &__blue:focus{
+        background-color: $color-blue-darker;
+        border: 2px solid $color-blue;
+    }
+    &__yellow{
+        margin: 1rem;
+        background-color: $color-yellow;
+        border: 2px solid $color-yellow-darker;
+    }
+    &__yellow:focus{
+        background-color: $color-yellow-darker;
+        border: 2px solid $color-yellow;
+    }
+    &__pink{
+        margin: 1rem;
+        background-color: $color-pink;
+        border: 2px solid $color-pink-darker;
+    }
+    &__pink:focus{
+        background-color: $color-pink-darker;
+        border: 2px solid $color-pink;
+    }
+    &__red{
+        margin: 1rem;
+        background-color: $color-red;
+        border: 2px solid $color-red-darker;
+    }
+    &__red:focus{
+        background-color: $color-red-darker;
+        border: 2px solid $color-red;
+    }
+    &__submit{
+        margin: 1rem;
+        background-color: $color-gray;
+        border: 2px solid $color-gray-darker;
+        color: $color-gray-darker;
+        font-weight: 500;
+    }
 }

@@ -1,35 +1,37 @@
 @import '../../assets/sass/main.scss';
-.container{
-  & .modules-weeks{
+
+.edu-homework {
     display: flex;
-    font-size: 3.5rem;
-    font-weight: 200;
-    & .select{
-      margin: 2rem;
-      padding: 1rem;
-      & .modules{
-        font-size: 1.7rem;
-        margin: 2rem;
-        padding: 0.7rem;
-      }
-      & .weeks{
-        font-size: 1.7rem;
-        margin: 2rem;
-        padding: 0.7rem;
-      }
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem 0;
+
+    &__inputs{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 3rem 0;
     }
-  }
-  & .student-score{
-    font-size: 2rem;
-    margin: 2rem;
-    & label{
-      margin: 1rem;
+
+    &__option {
+        @include inputStyles;
+        margin-right: 2rem;
     }
+
     & button{
+      width: 4rem;
+      height: 4rem;
       margin: 1rem;
       padding: 0.9rem;
+      @include inputStyles;
       @include boxShadow;
+      //margin: 2rem 0;
     }
-  }
+    & .submit{
+      @include inputStyles;
+      @include boxShadow;
+      width: 10rem;
+    }
+
 }
 

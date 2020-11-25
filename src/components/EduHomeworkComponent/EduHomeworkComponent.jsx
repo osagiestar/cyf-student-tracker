@@ -1,70 +1,96 @@
 import React, { useState } from 'react';
+import HeadingPageComponent from '../HeadingPageComponent/HeadingPageComponent';
 import './eduHomeworkComponent.scss'
 const EduHomeworkComponent = () => {
-  const [selectModules, setSelectModules] = useState("")
-  const [selectWeeks, setSelectWeeks] = useState("")
-  //An array of numbers for the user to choose to rate the students with.
-  const ratings = [0,1,2,3,4,5,6,7,8,9,10];
-  //A function to select the module that the user wants to give ratings.
-  const handleModulesChange = (event) =>{
-    setSelectModules(event.target.selectModules)
+  //Array of numbers for the user to give score
+  const scoreRatings = [0,1,2,3,4,5,6,7,8,9,10]
+  //Fake data similar to the one should be in the database
+  const classHomework = {
+      'HTML/CSS': {
+        week1: 'yes',
+        week2: null,
+        week3: null
+      },
+      'JS Quiz 1': {
+        week1: null,
+      },
+      'JavaScript 1': {
+        week1: null,
+        week2: null,
+        week3: null
+      },
+      'JavaScript 2': {
+       week1: null,
+       week2: null,
+       week3: null
+     },
+     'JavaScript 3': {
+       week1: null,
+       week2: null,
+       week3: null
+     }
+  };
+  const homeworkModules = Object.entries(classHomework);
+  const [selectModule, setSelectModule] =useState("")
+  const [selectWeek, setSelectWeek] =useState("")
+  const [attendance, setAttendance] =useState("")
+  //A function to handle the module selection
+  const handleModuleSelect=(event)=> {
+    setSelectModule(event.target.value)
   }
-  //A function to select which week of the module to rate
-  const handleWeeksChange = (event) =>{
-    setSelectWeeks(event.target.selectWeeks)
+  //A function to handle the week selection
+  const handleWeekSelect=(event) => {
+    setSelectWeek(event.target.value)
   }
-  //A function to handle the rating submission given to the student with a pop-up confirmation incase a button clicked accidentally.
-  const handleSubmitButton = (_isYes) => {
-    const isYes = prompt(` Are you sure you want to rate the student. Enter (Yes) to continue`, _isYes || '')
-    if (isYes === null || isYes.toLowerCase() === 'no') {
-      return
-    }
-    if (isYes === '') {
-      alert("The input can't be empty \n Please enter (Yes) to continue")
-      handleSubmitButton()
-      return
-    }
-    if (isYes.toLowerCase() === 'yes') {
-      //to do add your action if they chose yes
-    } else {
-      alert(`Please enter (Yes) to continue,\n You entered (${isYes})`)
-      handleSubmitButton(_isYes)
-    }
+  //A function to handle the submitted score for the chosen module and week
+  const handleBtnSelect=(event) => {
+    console.log(`Module: ${selectModule} , Week: ${selectWeek}: Score: ${attendance}`);
   }
-return (
-  <div className="container">
-    <div className="modules-weeks">
-      <div className="select">
-        <label for="modules">Modules:</label>
-        <select className="modules" value = {selectModules} onChange ={handleModulesChange}>
-        <option value="modules-0">Select Module</option>
-          <option value="modules-1">HTML-CSS</option>
-          <option value="modules-2">Javascript-1</option>
-          <option value="modules-3">Javascript-2</option>
-          <option value="modules-4">Javascript-3</option>
-          <option value="modules-5">React</option>
-          <option value="modules-6">Node</option>
-          <option value="modules-7">SQL</option>
-          <option value="modules-8">MongoDB</option>
-          <option value="modules-9">Final project</option>
+  //A function to handle the score assigned to the student
+  const handleClickedScore=(event) => {
+    setAttendance(event.target.innerHTML);
+  }
+  return (
+    <div>
+      <HeadingPageComponent title={"Edu Homework"}/>
+      <div className="edu-homework">
+        <div className= "edu-homework__inputs">
+        <label>Modules:</label>
+        <select
+          className="edu-homework__option"
+          value={selectModule}
+          onChange={handleModuleSelect}>
+          <option>Choose a module</option>
+          {
+          homeworkModules.map(([key, value], i) => (
+            <option key={i}>{key}</option>
+          ))}
         </select>
-      </div>
-      <div className="select">
-        <label for="weeks">Weeks:</label>
-        <select className="weeks" value={selectWeeks} onChange={handleWeeksChange}>
-          <option value="weeks-0">Select Week</option>
-          <option value="weeks-1">Week-1</option>
-          <option value="weeks-2">Week-2</option>
-          <option value="weeks-3">Week-3</option>
-        </select>
-      </div>
-    </div>
-    <div className="student-score">
-      <label for="score">Student Score:</label>
-      {ratings.map(score => (<button onClick={handleSubmitButton}> {score}</button>))}
-    </div>
-  </div>
-)
-}
 
+        <label>Week:</label>
+        <select
+          className="edu-homework__option"
+          value={selectWeek}
+          onChange={handleWeekSelect}  >
+            {
+              selectModule !== '' 
+              ?
+              Object.entries(classHomework[selectModule]).map(([key, value], index) => {
+                return <option key={index}>{key}</option>
+              } 
+              )
+              :
+              ''  
+            }
+          </select>
+        </div>
+        <div className="edu-homework__scoreRatings">
+          <label>Student Score: </label>
+          {scoreRatings.map((btn, i)=> (<button onClick={handleClickedScore} key ={i} > {btn}</button>))}
+        </div>
+        <button onClick={handleBtnSelect} className={"submit"}>SUBMIT</button>
+      </div>
+    </div>
+  );
+}
 export default EduHomeworkComponent

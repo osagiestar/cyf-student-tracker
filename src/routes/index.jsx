@@ -11,7 +11,6 @@ import Soon from '../pages/Soon/Soon';
 import Students from '../pages/Students/Students';
 import ChooseClass from '../pages/ChooseClass/ChooseClass';
 import ClassAttendanceComponent from '../components/ClassAttendanceComponent/ClassAttendanceComponent';
-import EduHomeworkComponent from '../components/EduHomeworkComponent/EduHomeworkComponent';
 export default () => {
   return (
     <div>
@@ -27,7 +26,6 @@ export default () => {
         <Route path="/student-tracker/Student-Info" component={Soon} />
         <Route path="/student-tracker/Laptop" component={Soon} />
         <Route path="/test" component={ClassAttendanceComponent}/>
-        <Route path="/test" component={EduHomeworkComponent} />
       </BrowserRouter>
     </div>
   );

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import HeadingPageComponent from '../HeadingPageComponent/HeadingPageComponent';
+import Button from '../ButtonComponent/buttoncomponent'
 import './eduHomeworkComponent.scss'
 const EduHomeworkComponent = () => {
   //Array of numbers for the user to give score
-  const scoreRatings = [0,1,2,3,4,5,6,7,8,9,10]
+  const buttons = [0,1,2,3,4,5,6,7,8,9,10]
   //Fake data similar to the one should be in the database
   const classHomework = {
       'HTML/CSS': {
@@ -84,11 +85,11 @@ const EduHomeworkComponent = () => {
             }
           </select>
         </div>
-        <div className="edu-homework__scoreRatings">
+        <div className="edu-homework__buttons">
           <label>Student Score: </label>
-          {scoreRatings.map((btn, i)=> (<button onClick={handleClickedScore} key ={i} > {btn}</button>))}
+          {buttons.map((btn, i) => <button className="score-button" key={i} onClick={handleClickedScore}>{btn}</button>)}
         </div>
-        <button onClick={handleBtnSelect} className={"submit"}>SUBMIT</button>
+        <Button onClick={handleBtnSelect} title={"SUBMIT"} className={"submit"}/>
       </div>
     </div>
   );

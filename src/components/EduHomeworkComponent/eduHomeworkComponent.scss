@@ -1,0 +1,35 @@
+@import '../../assets/sass/main.scss';
+.container{
+  & .modules-weeks{
+    display: flex;
+    font-size: 3.5rem;
+    font-weight: 200;
+    & .select{
+      margin: 2rem;
+      padding: 1rem;
+      & .modules{
+        font-size: 1.7rem;
+        margin: 2rem;
+        padding: 0.7rem;
+      }
+      & .weeks{
+        font-size: 1.7rem;
+        margin: 2rem;
+        padding: 0.7rem;
+      }
+    }
+  }
+  & .student-score{
+    font-size: 2rem;
+    margin: 2rem;
+    & label{
+      margin: 1rem;
+    }
+    & button{
+      margin: 1rem;
+      padding: 0.9rem;
+      @include boxShadow;
+    }
+  }
+}
+

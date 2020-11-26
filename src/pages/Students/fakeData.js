@@ -2,6 +2,7 @@
 
 const fakeData = [
     {
+        studentProfile: 1,
         name: 'Ekip Kalir',
     
         overview: {
@@ -13,6 +14,7 @@ const fakeData = [
       
      },
      {
+        studentProfile: 2,
         name: 'Osman Hajr',
     
         overview: {
@@ -24,6 +26,7 @@ const fakeData = [
   
     },
     {
+        studentProfile: 3,
         name: 'Adebola',
     
         overview: {
@@ -35,6 +38,7 @@ const fakeData = [
   
     },
     {
+        studentProfile: 4,
         name: 'Omolola Bello',
     
         overview: {

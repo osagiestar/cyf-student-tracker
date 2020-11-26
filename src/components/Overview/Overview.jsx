@@ -19,10 +19,10 @@ export default function Overview() {
     let student = {
         
        overview: {
-        'Homeworks Performance': [10,10,10,10,10,10,10,10,10,2],
+        'Homeworks Performance': [10,10,10,10,10,10,10,10,10,6],
         'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
-        'Classes Attended': ['no','no','yes', 'late','no'],
-        'Classes Late': ['yes', 'no', 'late', 'no']
+        'Classes Attended': ['no','no','no', 'no','no'],
+        'Classes Late': ['yes', 'yes', 'yes', 'late']
         }
      
     };
@@ -58,8 +58,8 @@ export default function Overview() {
                         <div className='overview__card'>
                             <div className="overview__card-percent">
                                 <svg>
-                                    <circle cx='50' cy='50' r='50'></circle>
-                                    <circle style={{'strokeDashoffset': `${400 - (400 * finalResult) / 100}`, stroke: returnColourBasedOnVal(finalResult) }} cx='50' cy='50' r='50'></circle>
+                                    <circle cx='30' cy='30' r='30'></circle>
+                                    <circle style={{'strokeDashoffset': `${190 - (190 * finalResult) / 100}`, stroke: returnColourBasedOnVal(finalResult) }} cx='30' cy='30' r='30'></circle>
                                 </svg>
 
                                 <div className="number">    

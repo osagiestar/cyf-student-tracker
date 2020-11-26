@@ -11,7 +11,7 @@ export default function StudentInfo({data}) {
         <div className='student-info'>
             {
                 studentInfo.map(([key,value], index) => 
-                <p key={index}><span className='student-info__title'>{key}</span>{value}</p>
+                <p key={index}><span className='student-info__title'>{key}: </span>{value}</p>
                 )
             }
            

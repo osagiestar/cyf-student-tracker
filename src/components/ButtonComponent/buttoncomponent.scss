@@ -62,5 +62,11 @@
         border: 2px solid $color-gray-darker;
         color: $color-gray-darker;
         font-weight: 500;
+
+        &:hover{
+            background-color: $color-gray-darker;
+            border: 2px solid $color-gray-darker;
+            color: white;
+        }
     }
 }

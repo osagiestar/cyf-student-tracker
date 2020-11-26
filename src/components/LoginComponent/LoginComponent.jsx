@@ -52,7 +52,7 @@ export default function LoginComponent() {
             name="Username"
             type="text"
             value={userName}
-            placeholder="username"
+            placeholder="Username"
             onChange={(e) => setUserName(e.target.value)}
           />
           <input
@@ -66,8 +66,8 @@ export default function LoginComponent() {
         <Button title= {"Login"} />
         </div>    
       </form>
-      <div>
-      <Link to="/reset">Forgot your password ?</Link>
+      <div className='login-box__reset'>
+        <Link to="/reset">Forgot your password ?</Link>
       </div>
       
     </div>

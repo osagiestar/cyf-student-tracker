@@ -2,8 +2,8 @@
 
 
 .sidebar{
-    width: 25rem;
-    height: 100vh;
+    max-width: 25rem;
+    // height: 100%;
     padding: 2rem ;
     background-color: $color-gray;
     @include centerColumnVH;

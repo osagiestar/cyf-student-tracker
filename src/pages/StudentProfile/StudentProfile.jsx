@@ -5,10 +5,14 @@ import StudentInfo from '../../components/StudentInfo/StudentInfo';
 import Overview from '../../components/Overview/Overview';
 import './studentprofile.scss';
 import PDSkillsComponent from '../../components/PDSkillsComponent/PDSkillsComponent';
+import EduHomeworkComponent from '../../components/EduHomeworkComponent/EduHomeworkComponent';
+import ClassAttendanceComponent from '../../components/ClassAttendanceComponent/ClassAttendanceComponent';
+import { useLocation } from 'react-router-dom'
 
 export default function StudentProfile() {
 
-    let studentProfile ={
+    let studentsProfile =[
+      {
 
         profile: 1,
         studentInfo: {
@@ -95,7 +99,99 @@ export default function StudentProfile() {
              week3: null
            }
          }
+},
+{
+
+  profile: 2,
+  studentInfo: {
+        Name: "Osman Hajr",
+        Location: "Birmingham",
+        Email: "Osman@yahoo.com",
+        Phone: "07771112223",
+        SlackId: "Osman"
+
+  },
+  overview: {
+      'Homeworks Performance': [6,6,6,6,6,6,6,6,10,10],
+      'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
+      'Classes Attended': ['no','no','yes', 'late','no'],
+      'Classes Late': ['yes', 'no', 'late', 'no']
+  },
+
+  eduHomework: {
+      'HTML/CSS': {
+        week1: null,
+        week2: null,
+        week3: null
+      },
+      'JS Quizz 1': {
+        week1: null,
+        week2: null,
+        week3: null
+      },
+      'JavaScript 1': {
+        week1: null,
+        week2: null,
+        week3: null
+      },
+      'JavaScript 2': {
+       week1: null,
+       week2: null,
+       week3: 5
+     },
+     'JavaScript 3': {
+       week1: null,
+       week2: null,
+       week3: null
+     }
+   },
+
+  PDSkills: {
+      'Communication': 'Very Good',
+      'Motivation': null,
+      'Collaboration & Team Work': null,
+      'Resilience': null,
+      'Growth Mindset': null,
+      'Organisation': null,
+      'Attention to detail': null,
+      'Punctuality': null,
+      'Focus ': null,
+      'Language Proficiency': null,
+      'Self-confidence': null,
+      'Pro-active Learning': null
+  },
+  classAttendance: {
+      'HTML/CSS': {
+        week1: 'yes',
+        week2: null,
+        week3: null
+      },
+      'JS Quizz 1': {
+        week1: null,
+        week2: 'no',
+        week3: null
+      },
+      'JavaScript 1': {
+        week1: null,
+        week2: null,
+        week3: null
+      },
+      'JavaScript 2': {
+       week1: null,
+       week2: null,
+       week3: null
+     },
+     'JavaScript 3': {
+       week1: null,
+       week2: null,
+       week3: null
+     }
+   }
 }
+    ]
+
+    const location = useLocation();
+    console.log(location);
 
     return (
         <div className='studentProfile'>
@@ -103,11 +199,13 @@ export default function StudentProfile() {
             <SideBarComponent />
 
         <div className='studentProfile__rightSide'>
-            <HeadingPageComponent title={studentProfile.studentInfo.Name} />
-            <StudentInfo data={studentProfile.studentInfo}/>
+            <HeadingPageComponent title={studentsProfile[0].studentInfo.Name} />
+            <StudentInfo data={studentsProfile[0].studentInfo}/>
             <Overview />
 
-            <PDSkillsComponent data={studentProfile.PDSkills}/>
+            <EduHomeworkComponent data={studentsProfile[0].eduHomework}/>
+            <PDSkillsComponent data={studentsProfile[0].PDSkills}/>
+            <ClassAttendanceComponent data={studentsProfile[0].classAttendance}/>
 
         </div>
             

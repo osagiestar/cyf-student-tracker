@@ -1,0 +1,58 @@
+@import '../../assets/sass/main.scss';
+
+.edu-homework-container{
+    background-color: $color-gray;
+    margin: 5rem 0;
+    padding: 5rem;
+}
+.edu-homework {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3rem 0;
+    
+
+    &__inputs{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 3rem 0;
+    }
+
+    &__option {
+        @include inputStyles;
+        margin: 0 2rem;
+    }
+
+    &__btn{
+        outline: none;
+        border: 1px solid $color-gray-darker;
+        width: 4rem;
+        height: 4rem;
+        margin: 1rem;
+        padding: 1rem;
+        @include boxShadow;
+        cursor: pointer;
+    
+      &:focus{
+          background-color: $color-gray-darker;
+          color: white;
+      }
+    }
+
+    &__scoreRatings{
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    
+
+    & .submit{
+      @include inputStyles;
+      @include boxShadow;
+      width: 10rem;
+    }
+
+}

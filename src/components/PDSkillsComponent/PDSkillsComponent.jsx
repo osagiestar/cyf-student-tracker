@@ -30,102 +30,15 @@ function ChooseColor(btn) {
       return className
 }
 
-export default function PDSkillsComponent (){
+export default function PDSkillsComponent ({data}){
 
     const buttons = ['Excellent', 'Very Good', 'Average', 'Below Average', 'Poor'];
 
-    let studentProfile ={
-
-        profile: 1,
-        studentInfo: {
-              name: "Ekip",
-              location: "Birmingham",
-              email: "ekip123@yahoo.com",
-              phone: "07771112223",
-              slackId: "Ekip321"
-  
-        },
-        overview: {
-            'Homeworks Performance': [6,6,6,6,6,6,6,6,10,10],
-            'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
-            'Classes Attended': ['no','no','yes', 'late','no'],
-            'Classes Late': ['yes', 'no', 'late', 'no']
-        },
-
-        eduHomework: {
-            'HTML/CSS': {
-              week1: null,
-              week2: null,
-              week3: null
-            },
-            'JS Quizz 1': {
-              week1: null,
-              week2: null,
-              week3: null
-            },
-            'JavaScript 1': {
-              week1: null,
-              week2: null,
-              week3: null
-            },
-            'JavaScript 2': {
-             week1: null,
-             week2: null,
-             week3: 5
-           },
-           'JavaScript 3': {
-             week1: null,
-             week2: null,
-             week3: null
-           }
-         },
-
-        PDSkills: {
-            'Communication': 'Very Good',
-            'Motivation': null,
-            'Collaboration & Team Work': null,
-            'Resilience': null,
-            'Growth Mindset': null,
-            'Organisation': null,
-            'Attention to detail': null,
-            'Punctuality': null,
-            'Focus ': null,
-            'Language Proficiency': null,
-            'Self-confidence': null,
-            'Pro-active Learning': null
-        },
-        classAttendance: {
-            'HTML/CSS': {
-              week1: 'yes',
-              week2: null,
-              week3: null
-            },
-            'JS Quizz 1': {
-              week1: null,
-              week2: 'no',
-              week3: null
-            },
-            'JavaScript 1': {
-              week1: null,
-              week2: null,
-              week3: null
-            },
-            'JavaScript 2': {
-             week1: null,
-             week2: null,
-             week3: null
-           },
-           'JavaScript 3': {
-             week1: null,
-             week2: null,
-             week3: null
-           }
-         }
-}
+    
 
 
     let valueArr = [];
-    let skillsObject = studentProfile.PDSkills;
+    let skillsObject = data;
     let skillsArr = Object.keys(skillsObject);
 
     const[option, setOption]= useState('');
@@ -148,8 +61,8 @@ export default function PDSkillsComponent (){
 
     function setResult (){
         if(option !== '') {
-            studentProfile.PDSkills[option] = rate;
-            console.log(studentProfile.PDSkills);
+            data.PDSkills[option] = rate;
+            console.log(data.PDSkills);
             alert(`Student was rated with ${rate} for ${option} `)
         }else{
             alert(`Please select a skill from the dropdown menu`)

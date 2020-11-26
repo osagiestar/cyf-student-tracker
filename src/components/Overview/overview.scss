@@ -12,20 +12,20 @@
 
         &-percent{
             position: relative;
-            width: 15rem;
-            height: 15rem;
+            width: 10rem;
+            height: 10rem;
     
             svg{
                 width: max-content;
     
                 circle{
-                    width: 15rem;
-                    height: 15rem;
+                    // width: 15rem;
+                    // height: 15rem;
                     transform: translate(5px,5px);
                     fill: none;
-                    stroke-width: 10;
-                    stroke-dasharray: 440;
-                    stroke-dashoffset: 440;
+                    stroke-width: 5;
+                    stroke-dasharray: 400;
+                    stroke-dashoffset: 400;
                     stroke-linecap: square;
     
                     &:nth-child(1){

@@ -13,7 +13,7 @@ export default function SideBarComponent() {
       </div>
 
       <nav className="sidebar__nav">
-        <Link className="sidebar__link" to="/student-tracker">
+        <Link className="sidebar__link" to="/students-tracker">
           <img
             className="sidebar__link-img"
             src={AnalyticsLogo}

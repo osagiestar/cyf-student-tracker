@@ -10,7 +10,7 @@ import PDSkills from '../pages/PDSkills/PDSkills';
 import Soon from '../pages/Soon/Soon';
 import Students from '../pages/Students/Students';
 import ChooseClass from '../pages/ChooseClass/ChooseClass';
-import ClassAttendanceComponent from '../components/ClassAttendanceComponent/ClassAttendanceComponent';
+import StudentProfile from '../pages/StudentProfile/StudentProfile';
 export default () => {
   return (
     <div>
@@ -19,13 +19,14 @@ export default () => {
         <Route path="/login" component={Login} />
         <Route path="/reset" component={ResetPassword} />
         <Route path="/choose-class" component={ChooseClass} />
-        <Route exact path="/student-tracker" component={StudentTracker} />
+        <Route exact path="/students-tracker" component={StudentTracker} />
         <Route exact path="/students" component={Students} />
-        <Route path="/student-tracker/Class-Attendance" component={ClassAttendance} />
-        <Route path="/student-tracker/PD-Skills" component={PDSkills} />
-        <Route path="/student-tracker/Student-Info" component={Soon} />
-        <Route path="/student-tracker/Laptop" component={Soon} />
-        <Route path="/test" component={ClassAttendanceComponent}/>
+        <Route exact path="/students/:profile" component={StudentProfile} />
+        <Route path="/students-tracker/Edu-Homework" component={EduHomework} />
+        <Route path="/students-tracker/Class-Attendance" component={ClassAttendance} />
+        <Route path="/students-tracker/PD-Skills" component={PDSkills} />
+        <Route path="/students-tracker/Student-Info" component={Soon} />
+        <Route path="/students-tracker/Laptop" component={Soon} />
       </BrowserRouter>
     </div>
   );

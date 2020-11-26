@@ -1,0 +1,11 @@
+@import '../../assets/sass/main.scss';
+
+
+.student-info{
+    margin: 5rem 0;
+    text-align: left;
+    &__title{
+        color: $color-primary;
+        font-weight: 600;
+    }
+}

@@ -9,7 +9,7 @@ export default function ClassAttendance() {
         // we are using the same classes as for Edu Homework Page
         <div className='eduHomeworkPage'>
             <HeadingPageComponent title={'Class Attendance'} />
-            <Link className='eduHomeworkPage__btn' to='/student-tracker'>&larr; goBack</Link>
+            <Link className='eduHomeworkPage__btn' to='/students-tracker'>&larr; goBack</Link>
             <ClassAttendanceTable />
 
         </div>

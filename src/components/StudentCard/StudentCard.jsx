@@ -6,7 +6,7 @@ import './studentcard.scss';
 export default function StudentCard({name, initials, index, overviewData}) {
     let formatedName = name.split(' ').join('-');
     return (
-        <Link to={`/student/${formatedName}`} className='student-card'>
+        <Link to={`/students/${formatedName}`} className='student-card'>
 
             <div className="student-card__info">
                 <div className="student-card__image">{initials}</div>

@@ -3,7 +3,7 @@ import './eduhomework.scss';
 import EduHomeworkTable from '../../components/EduHomeworkTable/EduHomeworkTable';
 import HeadingPageComponent from '../../components/HeadingPageComponent/HeadingPageComponent';
 import { Link } from 'react-router-dom';
-
+import EduHomeworkComponent from '../../components/EduHomeworkComponent/EduHomeworkComponent';
 
 export default function EduHomework() {
 
@@ -11,6 +11,7 @@ export default function EduHomework() {
         <div className='eduHomeworkPage'>
             <HeadingPageComponent title={'Edu Homework'} />
             <Link className='eduHomeworkPage__btn' to='/student-tracker'>&larr; goBack</Link>
+            <EduHomeworkComponent />
             <EduHomeworkTable />
 
         </div>

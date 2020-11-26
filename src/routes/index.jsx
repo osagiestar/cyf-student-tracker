@@ -21,7 +21,6 @@ export default () => {
         <Route path="/choose-class" component={ChooseClass} />
         <Route exact path="/student-tracker" component={StudentTracker} />
         <Route exact path="/students" component={Students} />
-        <Route path="/student-tracker/Edu-Homework" component={EduHomework} />
         <Route path="/student-tracker/Class-Attendance" component={ClassAttendance} />
         <Route path="/student-tracker/PD-Skills" component={PDSkills} />
         <Route path="/student-tracker/Student-Info" component={Soon} />

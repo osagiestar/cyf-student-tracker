@@ -15,7 +15,6 @@ initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
   <div className="sidebar__image">{initials}</div>
         <span>{teacherDetails.user}</span>
       </div>
-
       <nav className="sidebar__nav">
         <Link className="sidebar__link" to="/students-tracker">
           <img

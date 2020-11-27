@@ -1,10 +1,22 @@
-
+@import '../../assets/sass/main.scss';
 
 
 .studentTrackerPage{
     display: flex;
     
-
+    &__btn{
+        width: max-content;
+        margin: 3rem 0;
+        text-decoration: none;
+        font-weight: 500;
+        color: $color-gray-darker;
+        display: flex;
+        justify-content: flex-start;
+    
+        &:hover{
+            color: $color-primary;
+        }
+    }
     &__rightSide{
         padding: 5rem;
     }

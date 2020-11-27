@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import './students.scss';
 import HeadingPageComponent from '../../components/HeadingPageComponent/HeadingPageComponent'
 import SideBarComponent from '../../components/SideBarComponent/SideBarComponent'
@@ -12,12 +12,24 @@ function filterData(data, term){
 }
 
 export default function Students() {
+    
+    const [data, setData] = useState(fakeData);
+ 
+    useEffect(() => {
+        fetch("https://stingy-cherry-sight.glitch.me/student/student_data")
+          .then((res) => res.json())
+          .then((res) => setData(res))
+          .catch((err) => {
+            console.error(err);
+          });
+    }, [])
 
+    // console.log('tt', data);
     const getSearchedValAndFilterData = (term) => {
         setData(filterData(data, term));
     }
     
-    const [data, setData] = useState(fakeData);
+    
     
     return (
         <div className='studentsPage'>

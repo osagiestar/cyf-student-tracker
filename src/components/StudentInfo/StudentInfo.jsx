@@ -3,9 +3,7 @@ import './studentinfo.scss';
 
 export default function StudentInfo({data}) {
 
-    
     let studentInfo = Object.entries(data);
-    console.log(studentInfo)
 
     return (
         <div className='student-info'>

@@ -6,6 +6,7 @@ import Button  from "../../components/ButtonComponent/buttoncomponent";
 export default function LoginComponent() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  // const [data, setData] = useState("");
 
   const history = useHistory();
   const handleSubmit = (event) => {
@@ -23,11 +24,12 @@ export default function LoginComponent() {
       },
       body: JSON.stringify(information),
     };
-    fetch("https://stingy-cherry-sight.glitch.me/login", requestOptions)
+    fetch("https://stingy-cherry-sight.glitch.me/auth/login", requestOptions)
       .then((res) => res.json())
       .then((res) => {
         if (res.success === true) {
-          localStorage.setItem("token", res.token); //storing the token in localStorage.
+          localStorage.setItem("token", JSON.stringify(res)); //storing the token in localStorage.
+          // setData()
           history.push("/choose-class");
         } else {
           const error = new Error(res.error);

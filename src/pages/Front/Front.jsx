@@ -10,7 +10,7 @@ export default function Front(props) {
         Code Your Future Progress 
         <br /> Tracking App
       </h1>
-      <Link to="/login">
+      <Link to="/auth/login">
         <Button title={"Login as a Teacher"} />
       </Link>
     </div>

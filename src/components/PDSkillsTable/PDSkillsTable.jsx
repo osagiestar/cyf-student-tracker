@@ -1,8 +1,7 @@
 import React from 'react';
 import '../EduHomeworkTable/eduhomeworktable.scss';
-import data from './fakeData'
 
-export default function PDSkillsTable() {
+export default function PDSkillsTable({data}) {
 
     let skills = Object.keys(data[0].PDSkills);
 

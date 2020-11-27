@@ -16,18 +16,18 @@ export default () => {
     <div>
       <BrowserRouter>
         <Route exact path="/" component={Front} />
-        <Route path="/login" component={Login} />
+        <Route path="/auth/login" component={Login} />
         <Route path="/reset" component={ResetPassword} />
         <Route path="/choose-class" component={ChooseClass} />
         <Route exact path="/students-tracker" component={StudentTracker} />
-        <Route exact path="/students" component={Students} />
-        <Route exact path="/students/:profile" component={StudentProfile} />
-        <Route path="/students-tracker/Edu-Homework" component={EduHomework} />
-        <Route path="/students-tracker/Class-Attendance" component={ClassAttendance} />
-        <Route path="/students-tracker/PD-Skills" component={PDSkills} />
-        <Route path="/students-tracker/Student-Info" component={Soon} />
-        <Route path="/students-tracker/Laptop" component={Soon} />
+        <Route exact path="/student/student_data" component={Students} />
+        <Route exact path="/student/profile/:profile" component={StudentProfile} />
+        <Route path="/students/Edu-Homework" component={EduHomework} />
+        <Route path="/students/Class-Attendance" component={ClassAttendance} />
+        <Route path="/students/PD-Skills" component={PDSkills} />
+        <Route path="/students/Student-Info" component={Soon} />
+        <Route path="/students/Laptop" component={Soon} />
       </BrowserRouter>
-    </div>
+    </div>  
   );
 };  

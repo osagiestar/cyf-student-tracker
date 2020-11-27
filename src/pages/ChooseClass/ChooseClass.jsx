@@ -8,16 +8,25 @@ const ChooseClass = () => {
   function handleClick() {
     history.push("/students-tracker");
   }
+  let myToken = JSON.parse(localStorage.getItem('token'));
   
+
   return(
     <div className="container">
       <div className="welcome-msg">
-        <h3>Welcome back <span className="userName">{dummyData[0].userName} </span>!</h3>
+        <h3>Welcome back <span className="userName">{myToken.user} </span>!</h3>
         <p>Please choose which class would you like to access:</p>
       </div>
       <div className="btnDiv">
-        {dummyData[0].classes.map(x =>
-        (<button type="button" onClick={handleClick}>{x}</button>))}
+        {
+        
+        
+        Object.entries(myToken.class).map(([key, value], index) => {
+            return <button key={index} type="button" onClick={handleClick}>{value}</button>
+        })
+      
+        
+        }
       </div>
     </div>
   )

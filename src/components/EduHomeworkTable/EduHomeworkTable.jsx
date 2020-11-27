@@ -1,8 +1,8 @@
 import React from 'react';
 import './eduhomeworktable.scss'
-import data from './fakeData'
+// import data from './fakeData'
 
-export default function EduHomeworkTable() {
+export default function EduHomeworkTable({data}) {
 
     let modules = Object.keys(data[0].eduHomework);
 

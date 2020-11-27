@@ -21,7 +21,7 @@ export default function SideBarComponent() {
           />
           Students Tracker
         </Link>
-        <Link className="sidebar__link" to="/students">
+        <Link className="sidebar__link" to="/student/student_data">
           <img className="sidebar__link-img" src={Student} alt="student" />
           Students
         </Link>

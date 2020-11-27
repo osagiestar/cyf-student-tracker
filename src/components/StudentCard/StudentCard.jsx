@@ -6,7 +6,7 @@ import './studentcard.scss';
 export default function StudentCard({name, initials, profile, index, overviewData}) {
    
     return (
-        <Link to={`/students/${profile}`} className='student-card'>
+        <Link to={`/student/profile/${profile}`} className='student-card'>
 
             <div className="student-card__info">
                 <div className="student-card__image">{initials}</div>

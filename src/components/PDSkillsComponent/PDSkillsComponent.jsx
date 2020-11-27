@@ -30,7 +30,7 @@ function ChooseColor(btn) {
       return className
 }
 
-export default function PDSkillsComponent ({data}){
+export default function PDSkillsComponent ({data, getDataFromComponents, profileNumber}){
 
     const buttons = ['Excellent', 'Very Good', 'Average', 'Below Average', 'Poor'];
 
@@ -63,12 +63,22 @@ export default function PDSkillsComponent ({data}){
         if(option !== '') {
             data.PDSkills[option] = rate;
             console.log(data.PDSkills);
+            let info = {
+                studentProfile: profileNumber,
+                skill: option,
+                score: rate
+              }
+              getDataFromComponents(info);
             alert(`Student was rated with ${rate} for ${option} `)
         }else{
             alert(`Please select a skill from the dropdown menu`)
         }
+
+        
         
     }
+
+    
     return (
     <div className = 'PDSkills'>
         <HeadingPageComponent title={'PD Skills'} />

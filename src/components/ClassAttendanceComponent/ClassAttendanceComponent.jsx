@@ -22,7 +22,7 @@ function ChooseColor(btn) {
     }
     return className
 }
-export default function ClassAttendanceComponent({data}) {
+export default function ClassAttendanceComponent({data, getDataFromComponents, profileNumber}) {
 
   const buttons = ["Yes", "No", "Late"]
 
@@ -51,6 +51,13 @@ export default function ClassAttendanceComponent({data}) {
     if(!attendance ){
       alert('Please rate the student');
     }else{
+      let info = {
+        studentProfile: profileNumber,
+        module: optionModule,
+        week: optionWeek,
+        score: attendance
+      }
+      getDataFromComponents(info);
       alert(`Student was rated with ${attendance} for ${optionModule} ${optionWeek} `)
     }
   }

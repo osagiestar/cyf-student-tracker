@@ -5,7 +5,7 @@ import './boxtrackercomponent.scss';
 export default function BoxTrackerComponent({ title, image }) {
   let formatedTitle = title.split(' ').join('-');
   return (
-    <Link className="BoxTrackerComponent" to={`/students-tracker/${formatedTitle}`}>
+    <Link className="BoxTrackerComponent" to={`/students/${formatedTitle}`}>
       <img className="BoxTrackerComponent__image" src={image} alt="" />
       <h3 className="BoxTrackerComponent__title">{title}</h3>
     </Link>

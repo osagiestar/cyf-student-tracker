@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HeadingPageComponent from '../HeadingPageComponent/HeadingPageComponent';
 import Button from '../ButtonComponent/buttoncomponent';
 import './eduhomeworkcomponent.scss'
-const EduHomeworkComponent = ({data}) => {
+const EduHomeworkComponent = ({data, getDataFromComponents, profileNumber}) => {
   //Array of numbers for the user to give score
   const scoreRatings = [0,1,2,3,4,5,6,7,8,9,10]
   //Fake data similar to the one should be in the database
@@ -30,8 +30,17 @@ const EduHomeworkComponent = ({data}) => {
       if(!score ){
         alert('Please rate the student');
       }else{
+        let info = {
+          studentProfile: profileNumber,
+          module: selectModule,
+          week: selectWeek,
+          score: score
+        }
+        getDataFromComponents(info);
         alert(`Student was rated with ${score} for ${selectModule} ${selectWeek} `)
+        
       }
+      
       
     
   }

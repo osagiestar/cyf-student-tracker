@@ -13,29 +13,29 @@ function returnColourBasedOnVal(val){
     }
 }
 
-export default function Overview() {
+export default function Overview({data}) {
 
 
-    let student = {
+    // let student = {
         
-       overview: {
-        'Homeworks Performance': [10,10,10,10,10,10,10,10,10,6],
-        'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
-        'Classes Attended': ['no','no','no', 'no','no'],
-        'Classes Late': ['yes', 'yes', 'yes', 'late']
-        }
+    //    overview: {
+    //     'Homeworks Performance': [10,10,10,10,10,10,10,10,10,6],
+    //     'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
+    //     'Classes Attended': ['no','no','no', 'no','no'],
+    //     'Classes Late': ['yes', 'yes', 'yes', 'late']
+    //     }
      
-    };
+    // };
 
 
-    let overviews = Object.entries(student.overview);
+    let overviews = Object.entries(data);
     
 
     return (
         
             <div className="overview">
             {
-                overviews.map(([key, value]) => {
+                overviews.map(([key, value], index) => {
                     let sum = 0;
 
                     value.forEach(val => {
@@ -55,7 +55,7 @@ export default function Overview() {
 
                     let finalResult = Math.round(sum / value.length *10);
                     return (
-                        <div className='overview__card'>
+                        <div key={index} className='overview__card'>
                             <div className="overview__card-percent">
                                 <svg>
                                     <circle cx='30' cy='30' r='30'></circle>

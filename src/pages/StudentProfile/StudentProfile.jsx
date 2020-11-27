@@ -24,10 +24,10 @@ export default function StudentProfile() {
   
         },
         overview: {
-            'Homeworks Performance': [6,6,6,6,6,6,6,6,10,10],
+            'Homeworks Performance': [5,5,5,5,5,5,5,5,8,5],
             'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
-            'Classes Attended': ['no','no','yes', 'late','no'],
-            'Classes Late': ['yes', 'no', 'late', 'no']
+            'Classes Attended': ['yes','yes','yes', 'late','no'],
+            'Classes Late': ['yes', 'yes', 'late', 'no']
         },
 
         eduHomework: {
@@ -291,8 +291,8 @@ export default function StudentProfile() {
 
     let studentProfile = studentsProfile.filter(student => student.profile == profileNumber);
 
-    const [profile, setProfile] = useState('');
     const [dataTobeSend, setDataTobeSend] = useState({});
+  
 
     const getDataFromComponents = (data) => {
       setDataTobeSend(data);
@@ -305,7 +305,7 @@ export default function StudentProfile() {
       },
       body: JSON.stringify(dataTobeSend),
     };
-    fetch(`https://stingy-cherry-sight.glitch.me/student/profile/${profile}`, requestOptions)
+    fetch(`https://stingy-cherry-sight.glitch.me/student/profile/${profileNumber}`, requestOptions)
       .then((res) => res.json())
       .then((res) => {
         if (res.success === true) {
@@ -318,7 +318,6 @@ export default function StudentProfile() {
       .catch((err) => {
         console.error(err);
       });
-   
 
     return (
         <div className='studentProfile'>
@@ -328,11 +327,11 @@ export default function StudentProfile() {
         <div className='studentProfile__rightSide'>
             <HeadingPageComponent title={studentProfile[0].studentInfo.Name} />
             <StudentInfo data={studentProfile[0].studentInfo}/>
-            <Overview />
+            <Overview data={studentProfile[0].overview} />
 
-            <EduHomeworkComponent data={studentProfile[0].eduHomework} getDataFromComponents={getDataFromComponents} profileNumber={studentProfile[0].studentProfile}/>
-            <PDSkillsComponent data={studentProfile[0].PDSkills} getDataFromComponents={getDataFromComponents} profileNumber={studentProfile[0].studentProfile}/>
-            <ClassAttendanceComponent data={studentProfile[0].classAttendance} getDataFromComponents={getDataFromComponents} profileNumber={studentProfile[0].studentProfile}/>
+            <EduHomeworkComponent data={studentProfile[0].eduHomework} getDataFromComponents={getDataFromComponents} profileNumber={studentProfile[0].profile}/>
+            <PDSkillsComponent data={studentProfile[0].PDSkills} getDataFromComponents={getDataFromComponents} profileNumber={studentProfile[0].profile}/>
+            <ClassAttendanceComponent data={studentProfile[0].classAttendance} getDataFromComponents={getDataFromComponents} profileNumber={studentProfile[0].profile}/>
 
         </div>
             

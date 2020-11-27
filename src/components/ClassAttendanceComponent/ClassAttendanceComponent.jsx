@@ -57,6 +57,7 @@ export default function ClassAttendanceComponent({data, getDataFromComponents, p
         week: optionWeek,
         score: attendance
       }
+      console.log('infoFromClassAttend', info);
       getDataFromComponents(info);
       alert(`Student was rated with ${attendance} for ${optionModule} ${optionWeek} `)
     }

@@ -58,17 +58,19 @@ export default function PDSkillsComponent ({data, getDataFromComponents, profile
         setRate(e.target.innerHTML)
         
     }
+    
 
     function setResult (){
         if(option !== '') {
-            data.PDSkills[option] = rate;
-            console.log(data.PDSkills);
+            data[option] = rate;
+            
             let info = {
                 studentProfile: profileNumber,
                 skill: option,
                 score: rate
               }
               getDataFromComponents(info);
+              
             alert(`Student was rated with ${rate} for ${option} `)
         }else{
             alert(`Please select a skill from the dropdown menu`)

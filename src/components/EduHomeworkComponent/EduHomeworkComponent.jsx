@@ -36,6 +36,7 @@ const EduHomeworkComponent = ({data, getDataFromComponents, profileNumber}) => {
           week: selectWeek,
           score: score
         }
+        console.log('infoFromEduHomework', info);
         getDataFromComponents(info);
         alert(`Student was rated with ${score} for ${selectModule} ${selectWeek} `)
         

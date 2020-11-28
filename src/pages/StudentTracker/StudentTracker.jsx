@@ -9,6 +9,7 @@ import homework from '../../assets/icons/student tracker page/homework.svg';
 import information from '../../assets/icons/student tracker page/information.svg';
 import laptop from '../../assets/icons/student tracker page/laptop.svg';
 import skills from '../../assets/icons/student tracker page/skills.svg';
+import {Link} from 'react-router-dom';
 
 export default function StudentTracker() {
   const boxTrackerInfo = [
@@ -40,7 +41,7 @@ export default function StudentTracker() {
 
       <div className="studentTrackerPage__rightSide">
         <HeadingPageComponent title={'Student Tracker'} />
-
+        <Link className='studentTrackerPage__btn' to='/choose-class'>&larr; goBack</Link>
         <div className="studentTrackerPage__content">
           {boxTrackerInfo.map((info, index) => (
             <BoxTrackerComponent

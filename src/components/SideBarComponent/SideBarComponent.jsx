@@ -5,13 +5,16 @@ import AnalyticsLogo from '../../assets/icons/side navbar/analytics.svg';
 import Student from '../../assets/icons/side navbar/students-cap.svg';
 
 export default function SideBarComponent() {
+  let teacherDetails= JSON.parse(localStorage.getItem('token'));
+  let name = JSON.stringify(teacherDetails.user);
+  var initials = name.match(/\b\w/g) || [];
+initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
   return (
     <div className="sidebar">
       <div className="sidebar__info">
-        <div className="sidebar__image">CB</div>
-        <span>Claire Bickley</span>
+  <div className="sidebar__image">{initials}</div>
+        <span>{teacherDetails.user}</span>
       </div>
-
       <nav className="sidebar__nav">
         <Link className="sidebar__link" to="/students-tracker">
           <img

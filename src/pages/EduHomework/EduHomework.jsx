@@ -3,12 +3,12 @@ import './eduhomework.scss';
 import EduHomeworkTable from '../../components/EduHomeworkTable/EduHomeworkTable';
 import HeadingPageComponent from '../../components/HeadingPageComponent/HeadingPageComponent';
 import { Link } from 'react-router-dom';
-import fakeData from './fakeData'
+// import fakeData from './fakeData'
 
 
 export default function EduHomework() {
 
-    const [data, setData] = useState(fakeData);
+    const [data, setData] = useState([]);
 
 
     useEffect(() => {
@@ -21,9 +21,10 @@ export default function EduHomework() {
     }, [])
  
 
+    return data.length > 0 
+    ?
 
-
-    return (
+    (
         <div className='eduHomeworkPage'>
             <HeadingPageComponent title={'Edu Homework'} />
             <Link className='eduHomeworkPage__btn' to='/students-tracker'>&larr; goBack</Link>
@@ -31,4 +32,6 @@ export default function EduHomework() {
 
         </div>
     )
+    :
+    <div>Loading...</div>
 }

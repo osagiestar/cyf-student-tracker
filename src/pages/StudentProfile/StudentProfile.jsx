@@ -95,5 +95,5 @@ export default function StudentProfile() {
         </div>
     )
     :
-     <div>Loading</div>
+     <div>Loading...</div>
 }

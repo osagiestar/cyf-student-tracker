@@ -88,7 +88,7 @@ const EduHomeworkComponent = ({data, getDataFromComponents, profileNumber}) => {
           </select>
         </div>
         <div className="edu-homework__scoreRatings">
-          <label>Student Score: </label>
+          <label>Score: </label>
           {scoreRatings.map((btn, i)=> (<button className='edu-homework__btn' onClick={handleClickedScore} key ={i} > {btn}</button>))}
         </div>
 

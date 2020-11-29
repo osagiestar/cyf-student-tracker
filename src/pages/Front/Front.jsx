@@ -7,8 +7,8 @@ export default function Front(props) {
   return (
     <div className="front-page">
       <h1 className="front-page-title">
-        Code Your Future Progress 
-        <br /> Tracking App
+        Code Your Future
+        <br /> <span> Students Progress Tracking App</span>
       </h1>
       <Link to="/auth/login">
         <Button title={"Login as a Teacher"} />

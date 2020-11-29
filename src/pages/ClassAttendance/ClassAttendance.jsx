@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import ClassAttendanceTable from '../../components/ClassAttendanceTable/ClassAttendanceTable';
 import HeadingPageComponent from '../../components/HeadingPageComponent/HeadingPageComponent';
 import '../EduHomework/eduhomework.scss'; 
-import fakeData from './fakeData';
+// import fakeData from './fakeData';
 
 export default function ClassAttendance() {
 
-    const [data, setData] = useState(fakeData);
+    const [data, setData] = useState([]);
 
 
     useEffect(() => {
@@ -21,7 +21,8 @@ export default function ClassAttendance() {
  
 
 
-    return (
+    return data.length > 0 
+    ?
         // we are using the same classes as for Edu Homework Page
         <div className='eduHomeworkPage'>
             <HeadingPageComponent title={'Class Attendance'} />
@@ -29,5 +30,6 @@ export default function ClassAttendance() {
             <ClassAttendanceTable data={data}  />
 
         </div>
-    )
+    :
+        <div>Loading...</div>
 }

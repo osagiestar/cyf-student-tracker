@@ -4,11 +4,11 @@ import HeadingPageComponent from '../../components/HeadingPageComponent/HeadingP
 import SideBarComponent from '../../components/SideBarComponent/SideBarComponent'
 import AllStudentsCards from '../../components/AllStudentsCards/AllStudentsCards';
 import SearchComponent from '../../components/SearchComponent/SearchComponent';
-import fakeData from './fakeData';
+// import fakeData from './fakeData';
 
 
 function filterData(data, term){
-    return fakeData.filter(item => item.studentInfo.Name.toLowerCase().includes(term.toLowerCase()));
+    return data.filter(item => item.studentInfo.Name.toLowerCase().includes(term.toLowerCase()));
 }
 
 export default function Students() {

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import HeadingPageComponent from '../../components/HeadingPageComponent/HeadingPageComponent';
 import PDSkillsTable from '../../components/PDSkillsTable/PDSkillsTable';
 import '../EduHomework/eduhomework.scss';
-import fakeData from './fakeData'
+// import fakeData from './fakeData'
 
 export default function PDSkills() {
 
 
-    const [data, setData] = useState(fakeData);
+    const [data, setData] = useState([]);
 
 
     useEffect(() => {
@@ -19,13 +19,17 @@ export default function PDSkills() {
             console.error(err);
           });
     }, [])
-    return (
+
+
+    return data.length > 0 
+    ?
         // we are using the same classes as for Edu Homework Page
         <div className='eduHomeworkPage'>
             <HeadingPageComponent title={'PD Skills'} />
             <Link className='eduHomeworkPage__btn' to='/students-tracker'>&larr; goBack</Link>
             <PDSkillsTable data={data}/>
         </div>
-        
-    )
+    :
+        <div>Loading...</div>  
+    
 }

@@ -1,71 +1,74 @@
 @import '../../assets/sass/main.scss';
 
-.overview{
-    padding: 5rem;
-    position: relative;
-    @include centerVH;
+.overviewComponent{
     background-color: $color-gray;
-
-    @media screen and(max-width: 900px){
-        flex-wrap: wrap;
-    }
-    &__card{
-        margin: 2rem 3rem;
-
-        &-percent{
-            position: relative;
-            width: 10rem;
-            height: 10rem;
+    padding: 3rem;
+    .overview{
+        margin-top: 2rem;
+        position: relative;
+        @include centerVH;
+        @media screen and(max-width: 900px){
+            flex-wrap: wrap;
+        }
+        &__card{
+            margin: 2rem 3rem;
     
-            svg{
+            &-percent{
+                position: relative;
                 width: 10rem;
-    
-                circle{
-                    // width: 15rem;
-                    // height: 15rem;
-                    transform: translate(20px,5px);
-                    fill: none;
-                    stroke-width: 4;
-                    stroke-dasharray: 190;
-                    stroke-linecap: round;
-    
-                    &:nth-child(1){
-                        stroke-dashoffset: 0;
-                        stroke: #b6b6b6;
+                height: 10rem;
+        
+                svg{
+                    width: 10rem;
+        
+                    circle{
+                        // width: 15rem;
+                        // height: 15rem;
+                        transform: translate(20px,5px);
+                        fill: none;
+                        stroke-width: 4;
+                        stroke-dasharray: 190;
+                        stroke-linecap: round;
+        
+                        &:nth-child(1){
+                            stroke-dashoffset: 0;
+                            stroke: #b6b6b6;
+                        }
                     }
                 }
             }
         }
-    }
-
     
-
-    .number{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -42%);
-        width: 100%;
-        height: 100%;
-        color: $color-gray-darker;
-
-
-        h2{
-            font-size:1.8rem ;
-            span{
-                font-size: 1.8rem;
+        
+    
+        .number{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -42%);
+            width: 100%;
+            height: 100%;
+            color: $color-gray-darker;
+    
+    
+            h2{
+                font-size:1.8rem ;
+                span{
+                    font-size: 1.8rem;
+                }
             }
         }
+    
+        .text{
+            width: 9rem;
+            color: $color-gray-darker;
+            font-weight: 700;
+            font-size: 1.6rem;
+            text-align: center;
+            margin: 0;
+            margin-top: -2rem;
+        }
     }
-
-    .text{
-        width: 9rem;
-        color: $color-gray-darker;
-        font-weight: 700;
-        font-size: 1.6rem;
-        text-align: center;
-        margin: 0;
-        margin-top: -2rem;
-    }
+    
+    
 }
-

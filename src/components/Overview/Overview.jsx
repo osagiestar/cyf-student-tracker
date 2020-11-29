@@ -1,4 +1,5 @@
 import React from 'react';
+import HeadingPageComponent from '../HeadingPageComponent/HeadingPageComponent';
 import './overview.scss';
 
 function returnColourBasedOnVal(val){
@@ -15,25 +16,14 @@ function returnColourBasedOnVal(val){
 
 export default function Overview({data}) {
 
-
-    // let student = {
-        
-    //    overview: {
-    //     'Homeworks Performance': [10,10,10,10,10,10,10,10,10,6],
-    //     'Missing Homeworks': ['yes', 'yes', 'yes', 'no'],
-    //     'Classes Attended': ['no','no','no', 'no','no'],
-    //     'Classes Late': ['yes', 'yes', 'yes', 'late']
-    //     }
-     
-    // };
-
-
     let overviews = Object.entries(data);
     
-
     return (
+        <div className="overviewComponent">
+            <HeadingPageComponent title={'Overview'} />
         
             <div className="overview">
+                
             {
                 overviews.map(([key, value], index) => {
                     let sum = 0;
@@ -77,6 +67,8 @@ export default function Overview({data}) {
                 
         
             </div>
+        </div>
+        
     
     )
 }

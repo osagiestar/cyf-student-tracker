@@ -16,8 +16,8 @@ export default function AllStudentsCards({students}) {
         <div>
             {
                 students.map((student,index) => {
-                    let initials = createInitials(student.name)
-                    return <StudentCard key={index} name={student.name} profile={student.studentProfile} initials={initials} index={index+1} overviewData={student.overview} />
+                    let initials = createInitials(student.studentInfo.Name)
+                    return <StudentCard key={index} name={student.studentInfo.Name} profile={student.profile} initials={initials} index={index+1} overviewData={student.overview} />
                 })
             }
             

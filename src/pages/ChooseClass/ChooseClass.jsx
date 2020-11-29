@@ -12,7 +12,7 @@ const ChooseClass = () => {
   
 
   return(
-    <div className="container">
+    <div className="container-chooseClass">
       <div className="welcome-msg">
         <h3>Welcome back <span className="userName">{myToken.user} </span>!</h3>
         <p>Please choose which class would you like to access:</p>
@@ -22,7 +22,7 @@ const ChooseClass = () => {
         
         
         Object.entries(myToken.class).map(([key, value], index) => {
-            return <button key={index} type="button" onClick={handleClick}>{value}</button>
+            return <button key={index} className="container-chooseClass__btn" onClick={handleClick}>{value}</button>
         })
       
         

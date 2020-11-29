@@ -8,28 +8,29 @@ import fakeData from './fakeData';
 
 
 function filterData(data, term){
-    return fakeData.filter(item => item.name.toLowerCase().includes(term.toLowerCase()));
+    return fakeData.filter(item => item.studentInfo.Name.toLowerCase().includes(term.toLowerCase()));
 }
 
 export default function Students() {
     
-    const [data, setData] = useState(fakeData);
+    const [data, setData] = useState([]);
  
     useEffect(() => {
         fetch("https://stingy-cherry-sight.glitch.me/student/student_data")
           .then((res) => res.json())
-          .then((res) => setData(res))
-          .catch((err) => {
+          .then((res) => {
+              setData(res)
+            })
+          .catch((err) => { 
             console.error(err);
           });
     }, [])
 
-    // console.log('tt', data);
     const getSearchedValAndFilterData = (term) => {
         setData(filterData(data, term));
     }
-    
-    
+
+  
     
     return (
         <div className='studentsPage'>

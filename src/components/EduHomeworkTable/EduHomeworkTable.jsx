@@ -51,7 +51,15 @@ export default function EduHomeworkTable({data}) {
                                             //choose different color background depending on the student rating
                                             className={value !== null ? (value <= 3 ? 'red' : value >= 8 ? 'green' : 'yellow') : 'white'}
                                         >
-                                        {value}
+                                            
+                                        {
+                                            value !== null
+                                            ?
+                                            value
+                                            :
+                                            '-'
+
+                                        }
                                         </td>
                                         )
                                     })

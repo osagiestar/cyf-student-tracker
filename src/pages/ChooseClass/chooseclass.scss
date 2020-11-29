@@ -1,5 +1,6 @@
 @import '../../assets/sass/main.scss';
-.container{
+.container-chooseClass{
+  margin: 10rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +8,7 @@
   align-items: center;
 
   & .welcome-msg{
-    margin: 5rem;
+    
     font-size: 3rem;
     font-weight: 100;
     & h3{
@@ -18,20 +19,26 @@
       font-weight: 500;
     }
   }
-  & .btnDiv{
-    
-    margin: 10rem;
 
-    & button{
-      cursor: pointer;
-      color: $color-gray-darker;
-      margin: 5rem;
-      padding: 3rem;
-      width: 15rem;
-      height: 15rem;
-      font-size: 2rem;
-      @include boxShadow;
+  &__btn{
+    padding: 3rem;
+    border: 1px solid $color-gray-darker;
+    margin: 5rem;
+    width: 15rem;
+    height: 15rem;
+    cursor: pointer;
+    color: $color-gray-darker;
+    background-color: $color-gray;
+    font-size: 2rem;
+    @include boxShadow;
+    &:hover{
+      color: $color-gray;
+    background-color: $color-gray-darker;
     }
+  }
+  & .btnDiv{
+    margin: 3rem auto;
+
   }
 }
 

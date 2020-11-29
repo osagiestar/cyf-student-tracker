@@ -44,7 +44,13 @@ export default function PDSkillsTable({data}) {
                                                 (value == 'Below Average' ? 'red-darker' : value == 'Poor' ? 'red' : value == 'Average' ? 'yellow' : value == 'Very Good' ? 'green' : 'green-darker') : 
                                                 'white'} 
                                         >
-                                        {value}
+                                        {
+                                            value !== null
+                                            ?
+                                            value
+                                            :
+                                            '-'
+                                        }
                                         </td>
                                     )
                                     
